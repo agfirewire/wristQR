@@ -1,6 +1,7 @@
 #include <pebble.h>
 #include "menu_window.h"
 #include "app_state.h"
+#include "qr_window.h"
 
 static Window *s_window;
 static MenuLayer *s_menu_layer;
@@ -17,7 +18,7 @@ static void draw_row(GContext *gctx, const Layer *cell_layer,
 }
 
 static void select_click(MenuLayer *layer, MenuIndex *idx, void *ctx) {
-  APP_LOG(APP_LOG_LEVEL_INFO, "select row %d", (int)idx->row);  /* wired in Task 7 */
+  qr_window_push(idx->row);
 }
 
 static void update_visibility(void) {
