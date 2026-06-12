@@ -3,6 +3,12 @@ var LABEL_MAX = 20;
 var TEXT_MAX = 200;
 var MAX_MODULES = 57; // QR version 10 — matches watch QR_MAX_VERSION
 
+qrcode.stringToBytes = qrcode.stringToBytesFuncs['UTF-8'];
+
+function utf8Length(s) {
+  return new Blob([s]).size;
+}
+
 var entries = [];
 
 function $(id) { return document.getElementById(id); }
@@ -42,8 +48,8 @@ function updatePreview() {
   $('preview').innerHTML = '';
   setError('');
   if (!text) return;
-  if (text.length > TEXT_MAX) {
-    setError('Too long to display scannably (' + text.length + '/' + TEXT_MAX + ' chars).');
+  if (utf8Length(text) > TEXT_MAX) {
+    setError('Too long to display scannably (' + utf8Length(text) + '/' + TEXT_MAX + ' bytes).');
     return;
   }
   var qr = buildQr(text);
@@ -85,8 +91,8 @@ function addEntry() {
   var text = $('text-input').value.trim();
   if (!label) { setError('Give this code a label.'); return; }
   if (!text) { setError('Paste a URL or decode a screenshot first.'); return; }
-  if (text.length > TEXT_MAX) {
-    setError('Too long to display scannably (' + text.length + '/' + TEXT_MAX + ' chars).');
+  if (utf8Length(text) > TEXT_MAX) {
+    setError('Too long to display scannably (' + utf8Length(text) + '/' + TEXT_MAX + ' bytes).');
     return;
   }
   if (!buildQr(text)) {
