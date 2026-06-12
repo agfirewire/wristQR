@@ -1,5 +1,5 @@
-// Change to the GitHub Pages URL when the config page is published.
-var CONFIG_URL = 'http://localhost:8000/index.html';
+// Published from config/ via the gh-pages branch (see README).
+var CONFIG_URL = 'https://agfirewire.github.io/wristQR/index.html';
 
 var MAX_RETRIES = 3;
 

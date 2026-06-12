@@ -29,8 +29,19 @@ pressing "Save to watch", or saving the empty list will clear the watch.
 
 ## Publishing the config page
 
-`config/` is static — host it anywhere (GitHub Pages). Then set
-`CONFIG_URL` in `src/pkjs/index.js` to the published URL and rebuild.
+The page is hosted at https://agfirewire.github.io/wristQR/ (GitHub Pages,
+`gh-pages` branch), and `CONFIG_URL` in `src/pkjs/index.js` points there.
+After changing anything in `config/`, republish with:
+
+    git subtree push --prefix config origin gh-pages
+
+For local development, serve `config/` (see Develop above) and temporarily
+point `CONFIG_URL` back to `http://localhost:8000/index.html`.
+
+## License
+
+MIT (see `LICENSE`). Vendored libraries keep their own licenses — see
+`THIRD_PARTY_LICENSES.md`.
 
 ## Spec & plan
 
