@@ -1,0 +1,19 @@
+{
+  "name": "qrwallet",
+  "author": "Matt Eggertson",
+  "version": "1.0.0",
+  "private": true,
+  "keywords": ["pebble-app"],
+  "dependencies": {},
+  "pebble": {
+    "displayName": "QR Wallet",
+    "uuid": "70b37ef7-9a81-4cbb-a756-e8c239cca4d8",
+    "sdkVersion": "3",
+    "enableMultiJS": true,
+    "targetPlatforms": ["diorite"],
+    "watchapp": { "watchface": false },
+    "capabilities": ["configurable"],
+    "messageKeys": ["INDEX", "LABEL", "TEXT", "DONE", "COUNT"],
+    "resources": { "media": [] }
+  }
+}
