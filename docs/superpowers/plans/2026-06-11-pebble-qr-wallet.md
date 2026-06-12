@@ -594,9 +594,9 @@ static void window_load(Window *window) {
   menu_layer_set_click_config_onto_window(s_menu_layer, window);
   layer_add_child(root, menu_layer_get_layer(s_menu_layer));
 
-  s_empty_layer = text_layer_create(GRect(8, 30, bounds.size.w - 16, 110));
+  s_empty_layer = text_layer_create(GRect(8, 8, bounds.size.w - 16, bounds.size.h - 16));
   text_layer_set_font(s_empty_layer,
-                      fonts_get_system_font(FONT_KEY_GOTHIC_24_BOLD));
+                      fonts_get_system_font(FONT_KEY_GOTHIC_18_BOLD));
   text_layer_set_text_alignment(s_empty_layer, GTextAlignmentCenter);
   text_layer_set_text(s_empty_layer,
       "No codes yet. Add them in the watchapp settings on your phone.");
