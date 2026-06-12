@@ -17,6 +17,10 @@ Pebble.addEventListener('webviewclosed', function (e) {
     console.log('Bad config response: ' + err);
     return;
   }
+  if (!Array.isArray(entries)) {
+    console.log('Bad config response: not an array');
+    return;
+  }
   localStorage.setItem('entries', JSON.stringify(entries));
   sendOne(entries, 0);
 });
