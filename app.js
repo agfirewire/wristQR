@@ -130,6 +130,21 @@ function renderList() {
     info.appendChild(text);
     li.appendChild(info);
 
+    var editBtn = document.createElement('button');
+    editBtn.textContent = '✎';
+    editBtn.onclick = (function (idx) {
+      return function () {
+        $('label-input').value = entries[idx].label;
+        $('text-input').value = entries[idx].text;
+        entries.splice(idx, 1);
+        setError('');
+        setWarning('');
+        updatePreview();
+        renderList();
+      };
+    }(i));
+    li.appendChild(editBtn);
+
     [['↑', -1], ['↓', 1]].forEach(function (move) {
       var btn = document.createElement('button');
       btn.textContent = move[0];

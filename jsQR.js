@@ -1,3 +1,4 @@
+/*! jsQR v1.4.0 | (c) Cosmo Wolfe | Apache-2.0 | https://github.com/cozmo/jsQR — see THIRD_PARTY_LICENSES.md */
 (function webpackUniversalModuleDefinition(root, factory) {
 	if(typeof exports === 'object' && typeof module === 'object')
 		module.exports = factory();
