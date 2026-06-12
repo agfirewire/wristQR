@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>QR Wallet</title>
+<style>
+  body { font-family: -apple-system, sans-serif; margin: 16px; max-width: 420px; }
+  h1 { font-size: 1.3em; }
+  ul { list-style: none; padding: 0; }
+  li { border: 1px solid #ccc; border-radius: 6px; padding: 8px; margin: 6px 0;
+       display: flex; align-items: center; gap: 6px; }
+  li .info { flex: 1; min-width: 0; }
+  li .text { color: #666; font-size: 0.8em; overflow: hidden;
+             text-overflow: ellipsis; white-space: nowrap; }
+  label { display: block; margin: 8px 0; }
+  input[type=text] { width: 100%; box-sizing: border-box; padding: 6px; }
+  button { padding: 8px 14px; margin: 4px 4px 4px 0; }
+  #save-btn { background: #ff4700; color: white; border: none;
+              border-radius: 6px; font-size: 1em; }
+  .error { color: #c00; }
+  .warn { color: #a60; }
+  #preview img { image-rendering: pixelated; }
+</style>
+</head>
+<body>
+  <h1>QR Wallet</h1>
+  <ul id="entry-list"></ul>
+  <p id="capacity"></p>
+
+  <h2>Add a code</h2>
+  <label>Label (max 20 chars)
+    <input type="text" id="label-input" maxlength="20" placeholder="WhatsApp">
+  </label>
+  <label>URL / text
+    <input type="text" id="text-input" placeholder="https://...">
+  </label>
+  <label>…or decode from a screenshot
+    <input type="file" id="file-input" accept="image/*">
+  </label>
+  <div id="preview"></div>
+  <p id="error" class="error"></p>
+  <p id="warning" class="warn"></p>
+  <button id="add-btn">Add</button>
+  <hr>
+  <button id="save-btn">Save to watch</button>
+
+  <script src="jsQR.js"></script>
+  <script src="qrcode.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
