@@ -20,6 +20,13 @@ Show your WhatsApp / LinkedIn / any QR code from a Pebble 2, instantly.
     pebble install --phone <PHONE_IP>       # Developer Connection in the
                                             # Pebble/Rebble phone app
 
+## Caveat: settings live on the phone
+
+The settings page seeds from the phone app's local storage, not from the
+watch. On a new phone (or after reinstalling the phone app) the settings
+list starts empty even if the watch still shows codes — re-add codes before
+pressing "Save to watch", or saving the empty list will clear the watch.
+
 ## Publishing the config page
 
 `config/` is static — host it anywhere (GitHub Pages). Then set
