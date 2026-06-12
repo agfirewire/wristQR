@@ -20,6 +20,7 @@
               border-radius: 6px; font-size: 1em; }
   .error { color: #c00; }
   .warn { color: #a60; }
+  .hint { color: #666; font-size: 0.85em; margin: 4px 0 8px; }
   #preview img { image-rendering: pixelated; }
 </style>
 </head>
@@ -38,6 +39,10 @@
   <label>…or decode from a screenshot
     <input type="file" id="file-input" accept="image/*">
   </label>
+  <p class="hint">If "Choose File" does nothing, the Pebble app's built-in
+  browser blocks file pickers. Instead, open the QR screenshot in your
+  Photos app, copy the link it detects (iOS Live Text / Google Lens), and
+  paste it into the URL field above.</p>
   <div id="preview"></div>
   <p id="error" class="error"></p>
   <p id="warning" class="warn"></p>
